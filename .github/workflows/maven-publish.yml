@@ -17,6 +17,8 @@ jobs:
       packages: write
 
     steps:
+    - name: Go to project directory
+      run: cd "C:\Users\jnadai\Desktop\Projetos\external-api-microservice"
     - name: Build with Maven
       run: mvn clean install
 
