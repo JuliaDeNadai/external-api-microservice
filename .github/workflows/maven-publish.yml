@@ -20,7 +20,7 @@ jobs:
     - name: clone project
       run: git clone https://github.com/JuliaDeNadai/external-api-microservice.git
     - name: Go to project directory
-      run: cd "external-api-microservice"
+      run: cd "external-api-microservice\external-api-microservice"
     - name: Build with Maven
       run: mvn clean install
 
