@@ -17,8 +17,10 @@ jobs:
       packages: write
 
     steps:
+    - name: clone project
+      run: git clone https://github.com/JuliaDeNadai/external-api-microservice.git
     - name: Go to project directory
-      run: cd "C:\Users\jnadai\Desktop\Projetos\external-api-microservice"
+      run: cd "external-api-microservice"
     - name: Build with Maven
       run: mvn clean install
 
