@@ -38,6 +38,6 @@ jobs:
     - name: Deploy App to CapRover
       uses: caprover/deploy-from-github@v1.0.1
       with:
-        server: http://192.168.10.200:3000/
+        server: captain.starplast.com.br
         app: ap-pedidos
         token: '${{ secrets.API_PEDIDOS }}'
