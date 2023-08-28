@@ -1,0 +1,25 @@
+# This workflow will build a package using Maven and then publish it to GitHub packages when a release is created
+# For more information see: https://github.com/actions/setup-java/blob/main/docs/advanced-usage.md#apache-maven-with-a-settings-path
+
+name: Maven Package
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - name: Testing
+      uses: appleboy/ssh-action@master
+      with: 
+        host: 192.168.15.255
+        username: jnadai
+        key: ${{ secrets.secret}}
+        port: 22
+        script: |
+          cd testdir
+          git pull origin master
+          git status 
