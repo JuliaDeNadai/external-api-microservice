@@ -10,7 +10,7 @@ on:
 
 jobs:
   build-and-deploy:
-     runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
     permissions:
       contents: read
       packages: write
@@ -27,19 +27,19 @@ jobs:
 
     - name: Build with Maven
       run: mvn -B package --file pom.xml
-      - uses: a7ul/tar-action@v1.1.0
-        with:
-          command: c
-          cwd: "./"
-          files: |
-            backend/
-            frontend/dist/
-            captain-definition
-          outPath: deploy.tar
+    - uses: a7ul/tar-action@v1.1.0
+      with:
+        command: c
+        cwd: "./"
+        files: |
+          backend/
+          frontend/dist/
+          captain-definition
+        outPath: deploy.tar
 
-      - name: Deploy App to CapRover
-        uses: caprover/deploy-from-github@v1.0.1
-        with:
-          server: http://192.168.10.200:3000/
-          app: ap-pedidos
-          token: '${{ secrets.API_PEDIDOS }}'
+    - name: Deploy App to CapRover
+      uses: caprover/deploy-from-github@v1.0.1
+      with:
+        server: http://192.168.10.200:3000/
+        app: ap-pedidos
+        token: '${{ secrets.API_PEDIDOS }}'
