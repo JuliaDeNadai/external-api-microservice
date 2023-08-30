@@ -1,0 +1,4 @@
+com\example\demo\infra\client\AuthApiClient.class
+com\example\demo\service\AuthApiService.class
+com\example\demo\Application.class
+com\example\demo\controller\AuthApiController.class
